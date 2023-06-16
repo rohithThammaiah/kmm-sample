@@ -1,7 +1,7 @@
 package dev.rohith.kmm_sample
 
 class ActivityDetailAnalytics(
-    private val analyticsReporter: AnalyticsReporter,
+    val analyticsReporter: AnalyticsReporter,
 ) {
 
     fun reportViewActivity(activityId: String, userId: String) {

@@ -1,17 +1,17 @@
 import SwiftUI
-//import shared
+import shared
 
 struct ContentView: View {
-//	let greet = Greeting().greet()
-//    let iosAnalyticsReporter = getAnalyticsReporter()
-//	let analyticsReporter = ActivityDetailsReporter(iosAnalyticsReporter)
+	let greet = Greeting().greet()
+    let analyticsReporter = ActivityDetailAnalytics(analyticsReporter: IOSAnalyticsReporter())
+    let activityId: String = UUID().uuidString
+    let userId: String = UUID().uuidString
 
 	var body: some View {
-        Text(":")
-//		Text(greet)
-//            .onTapGesture {
-//                analyticsReporter.reportViewActivity("", "")
-//            }
+		Text(greet)
+            .onTapGesture {
+                analyticsReporter.reportViewActivity(activityId: activityId, userId: userId)
+            }
 	}
 }
 
